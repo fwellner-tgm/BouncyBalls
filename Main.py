@@ -1,19 +1,30 @@
+"""
+Author: Florian Wellner
+Date: 18.12.2016
+Exercise: Balls that fly across the window and bounce off the walls
+
+Help from: Markus Reichl
+"""
+
 import sys
 from Controller import Controller
 from PySide import QtGui
 
 
-if __name__ == "__main__":
-    #the window
-    app = QtGui.QApplication(sys.argv)
+class App(QtGui.QApplication):
+    def __init__(self):
+        """
+        Initializes the app and creates an control instance
+        """
+        super().__init__(sys.argv)
+        self.control = Controller()
 
-    c = Controller()
+        while self.control.view.isVisible():
+            self.control.view.update()
+            self.processEvents()
 
-    #as long as the window ist visible, it is being repainted
-    while c.view.isVisible():
-        c.view.update()
-        #needs to be included or the windows freezes
-        app.processEvents()
+        sys.exit()
 
-    #should quit the program when the programm is closed but is kind of does not work
-    sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = App()
+    app.exec_()

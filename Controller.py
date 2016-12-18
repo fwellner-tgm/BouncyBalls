@@ -1,3 +1,11 @@
+"""
+Author: Florian Wellner
+Date: 18.12.2016
+Exercise: Balls that fly across the window and bounce off the walls
+
+Help from: Markus Reichl
+"""
+
 from View import View
 import random, time
 from multiprocessing import Process, Value
@@ -26,7 +34,7 @@ class Controller(Process):
         y = random.randint(self.view.radius, self.view.height / 100 * 86 - self.view.b_height / 2)
 
         #new Point
-        p = Point(x,y)
+        p = Point(x, y)
         #starts the point (it is a process)
         p.start()
 

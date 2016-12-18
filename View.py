@@ -1,6 +1,13 @@
+"""
+Author: Florian Wellner
+Date: 18.12.2016
+Exercise: Balls that fly across the window and bounce off the walls
+
+Help from: Markus Reichl
+"""
+
 from PySide.QtGui import *
 from PySide.QtCore import *
-import random
 
 
 class View(QWidget):
@@ -23,8 +30,6 @@ class View(QWidget):
 
         #array for the point processes
         self.points = []
-
-        self.radius = self.radius
 
     def setupUi(self):
         """
@@ -87,21 +92,19 @@ class View(QWidget):
         """
         #new pen
         mypen = QPen()
-        #mypen.setColor(QColor(self.randomColor(), self.randomColor(), self.randomColor()))
+
         #the thickness of the pen
         mypen.setWidth(10)
         #color of the pen
         mypen.setColor(Qt.blue)
 
-        #everything between painter.begin and painter.end will be painted and displayed
+        #everythng between painter.begin and painter.end will be painted and displayed
         self.painter.begin(self)
-
         #sets the custom pen to the painter
         self.painter.setPen(mypen)
-
         #paints the list
         for point in self.points:
-            self.painter.drawEllipse(point.x.value, point.y.value, self.radius, self.radius)
+            self.painter.drawEllipse(point.x.value, point.y.value, 3, 3)
 
         self.painter.end()
 
@@ -117,8 +120,3 @@ class View(QWidget):
             p.join()
 
         event.accept()
-
-    # Kommt später:
-    # def randomColor(self):
-    #     rgb = random.randint(0, 255)
-    #     return rgb

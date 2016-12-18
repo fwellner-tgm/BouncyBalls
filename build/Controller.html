@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Controller module &#8212; Bouncy Balls 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Bouncy Balls 1.0 documentation" href="index.html" />
+    <link rel="next" title="Main module" href="Main.html" />
+    <link rel="prev" title="View module" href="View.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Controller">
+<span id="controller-module"></span><h1>Controller module<a class="headerlink" href="#module-Controller" title="Permalink to this headline">¶</a></h1>
+<p>Author: Florian Wellner
+Date: 18.12.2016
+Exercise: Balls that fly across the window and bounce off the walls</p>
+<p>Help from: Markus Reichl</p>
+<dl class="class">
+<dt id="Controller.Controller">
+<em class="property">class </em><code class="descclassname">Controller.</code><code class="descname">Controller</code><a class="headerlink" href="#Controller.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">multiprocessing.context.Process</span></code></p>
+<p>The brain of the application, all the functionality is defined here</p>
+<dl class="method">
+<dt id="Controller.Controller.makePoint">
+<code class="descname">makePoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.makePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates random coordinates, creates a new Point with them and adds the to the point list
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Controller.removePoint">
+<code class="descname">removePoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Controller.removePoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the last point from the list
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Controller.Point">
+<em class="property">class </em><code class="descclassname">Controller.</code><code class="descname">Point</code><span class="sig-paren">(</span><em>x</em>, <em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">multiprocessing.context.Process</span></code></p>
+<p>The class where Points are made</p>
+<dl class="method">
+<dt id="Controller.Point.join">
+<code class="descname">join</code><span class="sig-paren">(</span><em>timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Point.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overriding the join method so the closing variable is set to True so the points are stopped properly
+:param timeout:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Controller.Point.run">
+<code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Controller.Point.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method that is called when the associated thread/process is started with .start()
+:return:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="View.html" title="previous chapter">View module</a></li>
+      <li>Next: <a href="Main.html" title="next chapter">Main module</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Controller.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Florian Wellner.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
+      
+      |
+      <a href="_sources/Controller.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
